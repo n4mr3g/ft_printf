@@ -6,7 +6,7 @@
 #    By: gpiccion <gpiccion@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 23:46:57 by gpiccion          #+#    #+#              #
-#    Updated: 2022/08/15 23:52:11 by gpiccion         ###   ########.fr        #
+#    Updated: 2022/08/26 22:28:26 by gpiccion         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,13 +19,9 @@ INCLUDES				= -I ./includes/
 LIBFT_DIR				= libft/
 LIBFT_A					= $(LIBFT_DIR)libft.a
 
-SRC						= ft_printf.c format_eval.c conversions.c conversions2.c auxiliary.c auxiliary2.c
-SRC_BONUS				= ft_printf_bonus.c format_eval_bonus.c \
-						conversions_bonus.c conversions2_bonus.c \
-						auxiliary_bonus.c auxiliary2_bonus.c auxiliary3_bonus.c
+SRC						= ft_printf.c format_eval.c conversions.c conversions2.c auxiliary.c auxiliary2.c auxiliary3.c
 
 OBJ						= $(SRC:.c=.o)
-OBJ_BONUS				= $(SRC_BONUS:.c=.o)
 
 ##############		RULES		##############
 
@@ -42,10 +38,8 @@ $(LIBFT_A):
 %.o:					%.c
 						$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-bonus:					$(LIBFT_A) $(OBJ_BONUS)
-						ar rcs $(NAME) $(OBJ_BONUS) $(LIBFT_DIR)*.o
 clean:
-						rm -f $(OBJ) $(OBJ_BONUS)
+						rm -f $(OBJ)
 						make clean -C $(LIBFT_DIR)
 
 fclean:					clean
@@ -54,4 +48,4 @@ fclean:					clean
 
 re:						fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all  clean fclean re
