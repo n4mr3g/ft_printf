@@ -6,7 +6,7 @@
 #    By: gpiccion <gpiccion@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 23:46:57 by gpiccion          #+#    #+#              #
-#    Updated: 2022/08/26 22:28:26 by gpiccion         ###   ########.fr        #
+#    Updated: 2022/08/27 13:08:10 by gpiccion         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,7 @@ OBJ						= $(SRC:.c=.o)
 
 ##############		RULES		##############
 
-all:					$(NAME) bonus
-
-mandatory:				$(NAME)
+all:					$(NAME)
 
 $(NAME):				$(LIBFT_A) $(OBJ)
 						ar rcs $(NAME) $(OBJ) $(LIBFT_DIR)*.o
